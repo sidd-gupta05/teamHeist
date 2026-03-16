@@ -1,6 +1,16 @@
 import { Link } from "react-router-dom";
-import { Users, Sparkles, Shield, ArrowRight, Star, BookOpen, Wand2, Beaker, PawPrint } from "lucide-react";
-import features from '../data/features'
+import {
+  Users,
+  Sparkles,
+  Shield,
+  ArrowRight,
+  Star,
+  BookOpen,
+  Wand2,
+  Beaker,
+  PawPrint,
+} from "lucide-react";
+import features from "../data/features";
 
 const stats = [
   { value: "200+", label: "Characters", icon: Users },
@@ -23,8 +33,15 @@ export default function Home() {
             "WIZARDING NEWS: Floo Network maintenance scheduled for Sunday",
           ].map((news, i) => (
             <div key={i} className="flex items-center gap-4 mx-8">
-              <span className="text-[10px] font-black uppercase tracking-widest text-amber-500">Notice</span>
-              <span className="text-sm text-amber-50/60 font-medium italic" style={{ fontFamily: "'EB Garamond', serif" }}>{news}</span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-amber-500">
+                Notice
+              </span>
+              <span
+                className="text-sm text-amber-50/60 font-medium italic"
+                style={{ fontFamily: "'EB Garamond', serif" }}
+              >
+                {news}
+              </span>
             </div>
           ))}
         </div>
@@ -39,7 +56,9 @@ export default function Home() {
         {/* Top badge */}
         <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-400/80 text-sm backdrop-blur-sm">
           <Star size={12} fill="currentColor" />
-          <span style={{ fontFamily: "'Cinzel', serif", letterSpacing: "0.15em" }}>
+          <span
+            style={{ fontFamily: "'Cinzel', serif", letterSpacing: "0.15em" }}
+          >
             The Wizarding World Archive
           </span>
           <Star size={12} fill="currentColor" />
@@ -62,9 +81,12 @@ export default function Home() {
           School of Witchcraft
         </p>
 
-        <p className="text-base md:text-lg text-amber-50/50 max-w-2xl mb-12 leading-relaxed" style={{ fontFamily: "'EB Garamond', serif" }}>
-          Step beyond the veil and into the enchanted world of Harry Potter. 
-          Explore hundreds of characters, master powerful spells, and discover 
+        <p
+          className="text-base md:text-lg text-amber-50/50 max-w-2xl mb-12 leading-relaxed"
+          style={{ fontFamily: "'EB Garamond', serif" }}
+        >
+          Step beyond the veil and into the enchanted world of Harry Potter.
+          Explore hundreds of characters, master powerful spells, and discover
           the legendary houses that shaped wizarding history.
         </p>
 
@@ -75,14 +97,18 @@ export default function Home() {
             className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-white transition-all duration-300"
             style={{
               background: "linear-gradient(135deg, #d97706, #f59e0b, #d97706)",
-              boxShadow: "0 0 30px rgba(217,119,6,0.3), inset 0 1px 0 rgba(255,255,255,0.15)",
+              boxShadow:
+                "0 0 30px rgba(217,119,6,0.3), inset 0 1px 0 rgba(255,255,255,0.15)",
               fontFamily: "'Cinzel', serif",
               letterSpacing: "0.08em",
             }}
           >
             <Wand2 size={18} strokeWidth={1.5} />
             Explore Now
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+            <ArrowRight
+              size={16}
+              className="group-hover:translate-x-1 transition-transform duration-300"
+            />
           </Link>
           <Link
             to="/houses"
@@ -99,7 +125,11 @@ export default function Home() {
           {stats.map(({ value, label, icon: Icon }) => (
             <div key={label} className="flex flex-col items-center gap-1">
               <div className="flex items-center gap-2">
-                <Icon size={14} className="text-amber-500/60" strokeWidth={1.5} />
+                <Icon
+                  size={14}
+                  className="text-amber-500/60"
+                  strokeWidth={1.5}
+                />
                 <span
                   className="text-2xl font-bold gold-text"
                   style={{ fontFamily: "'Cinzel', serif" }}
@@ -107,7 +137,9 @@ export default function Home() {
                   {value}
                 </span>
               </div>
-              <span className="text-xs text-amber-50/40 tracking-widest uppercase">{label}</span>
+              <span className="text-xs text-amber-50/40 tracking-widest uppercase">
+                {label}
+              </span>
             </div>
           ))}
         </div>
@@ -126,7 +158,8 @@ export default function Home() {
             Explore the Archive
           </h2>
           <p className="text-amber-50/50 text-lg max-w-xl mx-auto">
-            Every spell, every character, every secret of Hogwarts — catalogued and waiting.
+            Every spell, every character, every secret of Hogwarts — catalogued
+            and waiting.
           </p>
         </div>
 
@@ -183,7 +216,7 @@ export default function Home() {
                         className="text-2xl font-bold text-white mb-3"
                         style={{ fontFamily: "'Cinzel', serif" }}
                       >
-                        {feature.Title}
+                        {feature.title}
                       </h3>
                       <p className="text-white/60 leading-relaxed text-sm">
                         {feature.description}
@@ -191,8 +224,16 @@ export default function Home() {
                     </div>
 
                     {/* Arrow */}
-                    <div className="flex items-center gap-2 mt-6 text-sm font-medium" style={{ color: feature.accent }}>
-                      <span style={{ fontFamily: "'Cinzel', serif", letterSpacing: "0.05em" }}>
+                    <div
+                      className="flex items-center gap-2 mt-6 text-sm font-medium"
+                      style={{ color: feature.accent }}
+                    >
+                      <span
+                        style={{
+                          fontFamily: "'Cinzel', serif",
+                          letterSpacing: "0.05em",
+                        }}
+                      >
                         Explore
                       </span>
                       <ArrowRight
@@ -214,12 +255,23 @@ export default function Home() {
         <div
           className="relative p-10 rounded-3xl border border-amber-700/20 text-center overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, rgba(120,70,0,0.1), rgba(0,20,30,0.4))",
+            background:
+              "linear-gradient(135deg, rgba(120,70,0,0.1), rgba(0,20,30,0.4))",
             boxShadow: "0 0 60px rgba(120,70,0,0.08)",
           }}
         >
-          <div className="absolute top-4 left-8 text-amber-600/20 text-8xl" style={{ fontFamily: "serif" }}>"</div>
-          <div className="absolute bottom-4 right-8 text-amber-600/20 text-8xl" style={{ fontFamily: "serif" }}>"</div>
+          <div
+            className="absolute top-4 left-8 text-amber-600/20 text-8xl"
+            style={{ fontFamily: "serif" }}
+          >
+            "
+          </div>
+          <div
+            className="absolute bottom-4 right-8 text-amber-600/20 text-8xl"
+            style={{ fontFamily: "serif" }}
+          >
+            "
+          </div>
           <Sparkles
             size={24}
             className="text-amber-500/40 mx-auto mb-6"
@@ -230,7 +282,8 @@ export default function Home() {
             style={{ fontFamily: "'EB Garamond', serif" }}
           >
             Happiness can be found even in the darkest of times,
-            <br />if one only remembers to turn on the light.
+            <br />
+            if one only remembers to turn on the light.
           </p>
           <div className="glow-divider w-24 mx-auto mb-4" />
           <p
