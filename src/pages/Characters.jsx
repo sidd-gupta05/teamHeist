@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
-import { Users, LayoutGrid, GraduationCap, BookOpen, Loader2, Search } from "lucide-react";
+import {
+  Users,
+  LayoutGrid,
+  GraduationCap,
+  BookOpen,
+  Loader2,
+  Search,
+} from "lucide-react";
 import CharacterCard from "../components/CharacterCard";
 
 const filters = [
@@ -28,13 +35,15 @@ export default function Characters() {
   }, []);
 
   const filteredCharacters = characters.filter((char) => {
-    const matchesFilter = 
-      filter = "all" || 
-      (filter === "students" && char.hogwartsStudent) || 
+    const matchesFilter =
+      filter === "all" ||
+      (filter === "students" && char.hogwartsStudent) ||
       (filter === "staff" && char.hogwartsStaff);
-    
-    const matchesSearch = char.name.toLowerCase().includes(search.toLowerCase());
-    
+
+    const matchesSearch = char.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
+
     return matchesFilter && matchesSearch;
   });
 
@@ -80,13 +89,17 @@ export default function Characters() {
           </h1>
           <div className="glow-divider w-32 mb-4" />
           <p className="text-amber-50/40 max-w-lg">
-            Browse the complete registry of witches, wizards, and magical beings from the wizarding world.
+            Browse the complete registry of witches, wizards, and magical beings
+            from the wizarding world.
           </p>
         </div>
 
         {/* Search Bar */}
         <div className="relative w-full md:w-80">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-amber-500/40" size={18} />
+          <Search
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-amber-500/40"
+            size={18}
+          />
           <input
             type="text"
             placeholder="Search characters..."
@@ -125,8 +138,15 @@ export default function Characters() {
 
       {filteredCharacters.length === 0 && (
         <div className="text-center py-20">
-          <Users size={36} className="text-amber-500/20 mx-auto mb-4" strokeWidth={1} />
-          <p className="text-amber-50/30" style={{ fontFamily: "'Cinzel', serif" }}>
+          <Users
+            size={36}
+            className="text-amber-500/20 mx-auto mb-4"
+            strokeWidth={1}
+          />
+          <p
+            className="text-amber-50/30"
+            style={{ fontFamily: "'Cinzel', serif" }}
+          >
             No characters found
           </p>
         </div>

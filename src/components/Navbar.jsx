@@ -1,6 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Wand2, Users, Sparkles, Shield, Menu, X, Zap, Beaker, Star, PawPrint } from "lucide-react";
+import {
+  Wand2,
+  Users,
+  Sparkles,
+  Shield,
+  Menu,
+  X,
+  Zap,
+  Beaker,
+  Star,
+  PawPrint,
+} from "lucide-react";
 
 export default function Navbar() {
   const location = useLocation();
@@ -56,7 +67,7 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map(item, index => {
+            {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.path;
               return (
@@ -68,7 +79,10 @@ export default function Navbar() {
                       ? "bg-amber-500/10 text-amber-400 border border-amber-500/30 shadow-[0_0_15px_rgba(251,191,36,0.1)]"
                       : "text-amber-100/60 hover:text-amber-300 hover:bg-white/5"
                   }`}
-                  style={{ fontFamily: "'Cinzel', serif", letterSpacing: "0.05em" }}
+                  style={{
+                    fontFamily: "'Cinzel', serif",
+                    letterSpacing: "0.05em",
+                  }}
                 >
                   <Icon size={14} strokeWidth={1.5} />
                   {item.name}
@@ -82,7 +96,11 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-amber-700/30 text-amber-400 hover:bg-amber-500/10 transition-all duration-300"
           >
-            {isOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
+            {isOpen ? (
+              <X size={20} strokeWidth={1.5} />
+            ) : (
+              <Menu size={20} strokeWidth={1.5} />
+            )}
           </button>
         </div>
       </div>

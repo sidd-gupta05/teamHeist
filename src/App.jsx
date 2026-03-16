@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import home from "./pages/home";
+import Home from "./pages/Home";
 import Characters from "./pages/Characters";
 import Spells from "./pages/Spells";
 import Houses from "./pages/Houses";
@@ -8,7 +8,7 @@ import Potions from "./pages/Potions";
 import SortingHat from "./pages/SortingHat";
 import Creatures from "./pages/Creatures";
 import Footer from "./components/Footer";
-import { analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Navbar />
         <main className="flex-1">
           <Routes>
-            <Route path="/" element={<Home />}} />
+            <Route path="/" element={<Home />} />
             <Route path="/characters" element={<Characters />} />
             <Route path="/spells" element={<Spells />} />
             <Route path="/houses" element={<Houses />} />

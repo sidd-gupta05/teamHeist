@@ -7,7 +7,7 @@ export const houses = [
     colors: ["Scarlet", "Gold"],
     animal: "Lion",
     element: "Fire",
-    elementIcon: Flame,
+    elementIcon: "Flame",
     traits: ["Courage", "Bravery", "Determination", "Chivalry"],
     description:
       "Gryffindor values courage, bravery, nerve, and chivalry. Its emblematic animal is the lion, and its colors are scarlet and gold.",
@@ -27,7 +27,7 @@ export const houses = [
     colors: ["Green", "Silver"],
     animal: "Serpent",
     element: "Water",
-    elementIcon: Droplets,
+    elementIcon: "Droplets",
     traits: ["Ambition", "Cunning", "Leadership", "Resourcefulness"],
     description:
       "Slytherin values ambition, cunning, leadership, and resourcefulness. The house has produced many notable witches and wizards.",
@@ -47,7 +47,7 @@ export const houses = [
     colors: ["Yellow", "Black"],
     animal: "Badger",
     element: "Earth",
-    elementIcon: Mountain,
+    elementIcon: "Mountain",
     traits: ["Hard Work", "Patience", "Loyalty", "Fair Play"],
     description:
       "Hufflepuff values hard work, patience, loyalty, and fair play. The house is the most inclusive among the four great houses.",
@@ -67,7 +67,7 @@ export const houses = [
     colors: ["Blue", "Bronze"],
     animal: "Eagle",
     element: "Air",
-    elementIcon: Wind,
+    elementIcon: "Wind",
     traits: ["Intelligence", "Wisdom", "Creativity", "Curiosity"],
     description:
       "Ravenclaw values intelligence, wisdom, creativity, and curiosity. Its members often excel academically and are known for their wit.",
