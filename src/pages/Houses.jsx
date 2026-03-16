@@ -1,7 +1,17 @@
 import { useState } from "react";
 import {
-  Shield, Flame, Droplets, Wind, Mountain,
-  Crown, Ghost, Home, Swords, ChevronDown, ChevronUp, Star
+  Shield,
+  Flame,
+  Droplets,
+  Wind,
+  Mountain,
+  Crown,
+  Ghost,
+  Home,
+  Swords,
+  ChevronDown,
+  ChevronUp,
+  Star,
 } from "lucide-react";
 import { houses } from "../data/houses";
 
@@ -34,12 +44,13 @@ export default function Houses() {
         </h1>
         <div className="glow-divider w-32 mb-4" />
         <p className="text-amber-50/40 max-w-lg">
-          Each of the four great houses of Hogwarts represents a different set of values and virtues.
+          Each of the four great houses of Hogwarts represents a different set
+          of values and virtues.
         </p>
       </div>
 
       {/* House Cards Grid */}
-      <div className="grid grid-cols-0 md:grid-cols-0 gap-6 mb-8">
+      <div className="grid grid-cols-0 md:grid-cols-2 gap-6 mb-8">
         {houses.map((house) => {
           const ElementIcon = house.elementIcon;
           const isSelected = selectedHouse === house.name;
@@ -47,9 +58,7 @@ export default function Houses() {
             <div
               key={house.name}
               className={`house-card ${house.cardClass} p-7 cursor-pointer`}
-              onClick={() =>
-                setSelectedHouse(isSelected ? null : House.name)
-              }
+              onClick={() => setSelectedHouse(isSelected ? null : house.name)}
               style={{
                 outline: isSelected ? `2px solid ${house.accent}60` : "none",
                 outlineOffset: "2px",
@@ -75,13 +84,27 @@ export default function Houses() {
                   </div>
                   <div className="flex flex-col items-end gap-2">
                     <div className="flex items-center gap-1 bg-white/10 backdrop-blur-sm rounded-lg px-2 py-1">
-                      <ElementIcon size={12} className="text-white/70" strokeWidth={1.5} />
-                      <span className="text-white/70 text-xs">{house.element}</span>
+                      <ElementIcon
+                        size={12}
+                        className="text-white/70"
+                        strokeWidth={1.5}
+                      />
+                      <span className="text-white/70 text-xs">
+                        {house.element}
+                      </span>
                     </div>
                     {isSelected ? (
-                      <ChevronUp size={18} className="text-white/50" strokeWidth={1.5} />
+                      <ChevronUp
+                        size={18}
+                        className="text-white/50"
+                        strokeWidth={1.5}
+                      />
                     ) : (
-                      <ChevronDown size={18} className="text-white/50" strokeWidth={1.5} />
+                      <ChevronDown
+                        size={18}
+                        className="text-white/50"
+                        strokeWidth={1.5}
+                      />
                     )}
                   </div>
                 </div>
@@ -92,7 +115,10 @@ export default function Houses() {
                     <span
                       key={1}
                       className="px-3 py-1 rounded-full text-xs text-white/80 backdrop-blur-sm"
-                      style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.2)" }}
+                      style={{
+                        background: "rgba(255,255,255,0.15)",
+                        border: "1px solid rgba(255,255,255,0.2)",
+                      }}
                     >
                       {color}
                     </span>
@@ -106,7 +132,11 @@ export default function Houses() {
                       key={trait}
                       className="text-xs text-white/60 flex items-center gap-1"
                     >
-                      <Star size={8} fill="currentColor" className="opacity-50" />
+                      <Star
+                        size={8}
+                        fill="currentColor"
+                        className="opacity-50"
+                      />
                       {trait}
                     </span>
                   ))}
@@ -134,18 +164,30 @@ export default function Houses() {
           >
             <div
               className="w-10 h-10 rounded-xl flex items-center justify-center"
-              style={{ background: selected.accentLight, border: `1px solid ${selected.border}` }}
+              style={{
+                background: selected.accentLight,
+                border: `1px solid ${selected.border}`,
+              }}
             >
-              <Shield size={18} style={{ color: selected.accent }} strokeWidth={1.5} />
+              <Shield
+                size={18}
+                style={{ color: selected.accent }}
+                strokeWidth={1.5}
+              />
             </div>
             <div>
               <h3
                 className="text-xl font-bold"
-                style={{ fontFamily: "'Cinzel', serif", color: selected.accent }}
+                style={{
+                  fontFamily: "'Cinzel', serif",
+                  color: selected.accent,
+                }}
               >
                 {selected.name}
               </h3>
-              <p className="text-amber-50/40 text-xs tracking-wider">House Details</p>
+              <p className="text-amber-50/40 text-xs tracking-wider">
+                House Details
+              </p>
             </div>
           </div>
 
@@ -157,15 +199,30 @@ export default function Houses() {
                   { icon: Crown, label: "Founder", value: selected.founder },
                   { icon: Swords, label: "Head", value: selected.head },
                   { icon: Ghost, label: "Ghost", value: selected.ghost },
-                  { icon: Home, label: "Common Room", value: selected.commonRoom },
-                  { icon: selected.elementIcon, label: "Element", value: selected.element },
+                  {
+                    icon: Home,
+                    label: "Common Room",
+                    value: selected.commonRoom,
+                  },
+                  {
+                    icon: selected.elementIcon,
+                    label: "Element",
+                    value: selected.element,
+                  },
                 ].map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-center gap-4">
                     <div
                       className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                      style={{ background: selected.accentLight, border: `1px solid ${selected.border}` }}
+                      style={{
+                        background: selected.accentLight,
+                        border: `1px solid ${selected.border}`,
+                      }}
                     >
-                      <Icon size={14} style={{ color: selected.accent }} strokeWidth={1.5} />
+                      <Icon
+                        size={14}
+                        style={{ color: selected.accent }}
+                        strokeWidth={1.5}
+                      />
                     </div>
                     <div>
                       <p className="text-amber-50/40 text-xs uppercase tracking-wider mb-0.5">
@@ -181,7 +238,10 @@ export default function Houses() {
               <div>
                 <p
                   className="text-xs uppercase tracking-widest mb-4"
-                  style={{ color: selected.accent, fontFamily: "'Cinzel', serif" }}
+                  style={{
+                    color: selected.accent,
+                    fontFamily: "'Cinzel', serif",
+                  }}
                 >
                   House Traits
                 </p>
